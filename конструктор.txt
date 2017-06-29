@@ -2,23 +2,43 @@ class Box {
     int width; // ширина коробки
     int height; // высота коробки
     int depth; // глубина коробки
-	
+    
     // Конструктор
+    Box() {
+        width = 10;
+        height = 10;
+        depth = 10;
+    }
+    
+    // Второй конструктор
     Box(int w, int h, int d) {
         width = w;
-	height = h;
-	depth = d;
-}
-
-    // перегрузка класса
-
+        height = h;
+        depth = d;
+    }
+    
+    // Третий конструктор для куба
     Box(int len) {
-	width = height = depth = len;
-}
+        width = height = depth = len;
+    }
 	
+    // Используем объект типа Box
+    Box(Box ob) {
+        width = ob.width;
+        height = ob.height;
+        depth = ob.depth;
+    }
+    
     // вычисляем объём коробки
     int getVolume() {
-    	return width * height * depth;
+        return width * height * depth;
+    }
+    
+    // устанавливаем размеры коробки
+    void setDim(int w, int h, int d) {
+        width = w;
+        height = h;
+        depth = d;
     }
 }
 
@@ -29,3 +49,32 @@ Box catBox = new Box(100, 200, 100);
 // с помощью перегрузки класса можно вычислять объем и для других фигур
 
 Box cube = new Box(5);
+
+// объект в качестве параметров
+
+Box box1 = new Box(100, 200, 100);
+Box cloneBox = new Box(box1);
+
+
+// вызов перегруженных конструкторов через this()
+
+class Cat{
+    int age;
+    int birthday;
+    
+    // Инициализируем переменные явно
+    Cat(int i, int j) {
+        age = i;
+        birthday = j;
+    }
+    
+    // Инициализируем переменные одним и тем значением
+    Cat(int i) {
+        this(i, i); // вызывается Cat(i, i);
+    }
+    
+    // Присвоим значения по умолчанию 0
+    Cat() {
+        this(0); // вызывается Cat(0);
+    }
+}
