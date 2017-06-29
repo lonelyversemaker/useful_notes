@@ -1,0 +1,21 @@
+    int k = 0;
+    Random random = new Random();
+    int secret = random.nextInt(100 + 1);
+
+    public void onClick(View view) {
+        String valueString = mResultEditText.getText().toString();
+        int valueInt = Integer.parseInt(valueString);
+
+        if (k<8) {
+            if (valueInt!=secret) {
+            if (valueInt > secret) {
+                mInfoTextView.setText("Много " + secret);
+                k++;
+            } else {
+                mInfoTextView.setText("Мало " + secret);
+                k++;
+            }
+            } else mInfoTextView.setText("Ты выиграл " + secret);
+        }
+        else mInfoTextView.setText("Ты проиграл " + secret);
+    }

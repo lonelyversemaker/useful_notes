@@ -1,0 +1,15 @@
+public void onClick(View view) {
+        String valueString = mResultEditText.getText().toString();
+        int counter = Integer.parseInt(valueString);
+        int num1 = 0;
+        int num2 = 1;
+        int result = num1 + num2; // 1
+
+        while (result < counter) {
+            num1 = num2;
+            num2 = result;
+            result = num1 + num2;
+            mInfoTextView.append("Осталось " + result + " сек.\n");
+            counter--;
+        }
+    }

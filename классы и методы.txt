@@ -1,0 +1,37 @@
+public class Box { // объ€вление класса
+	int width;
+	int height;
+	int depth;
+
+
+int getVolume { // метод, возвращаюший значение типа integer
+	return width * height * depth;
+}
+
+void setDim(int w, int h, int d) { // метот (не возвращает значений = void)
+	width = w;
+	height = h;
+	depth = d;
+}
+
+}
+
+
+Box dogBox = new Box(); // создание объекта
+
+doxBox.setDim(400, 200, 250); // значени€ свойств объекта
+
+doxBox.getVolume(); // вызов метода дл€ вычислени€ значений объекта doxBox
+
+
+// метод дл€ вывода сервисный инфы (в нашем случае - значени€ переменных)
+public String toString() { 
+	return width + height + depth;
+}
+
+// вывод 
+
+dogBox.toString()
+
+
+

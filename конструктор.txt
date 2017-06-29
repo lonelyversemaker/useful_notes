@@ -1,0 +1,31 @@
+class Box {
+    int width; // ширина коробки
+    int height; // высота коробки
+    int depth; // глубина коробки
+	
+    // Конструктор
+    Box(int w, int h, int d) {
+        width = w;
+	height = h;
+	depth = d;
+}
+
+    // перегрузка класса
+
+    Box(int len) {
+	width = height = depth = len;
+}
+	
+    // вычисляем объём коробки
+    int getVolume() {
+    	return width * height * depth;
+    }
+}
+
+// теперь объект можно создавать так
+
+Box catBox = new Box(100, 200, 100);
+
+// с помощью перегрузки класса можно вычислять объем и для других фигур
+
+Box cube = new Box(5);
