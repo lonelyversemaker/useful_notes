@@ -1,0 +1,78 @@
+// в дополнение в классу Box наследуем классы HeavyBox и ColorBox
+
+class HeavyBox extends Box {
+    int weight;
+
+    HeavyBox(int w, int h, int d, int m) {
+        width = w;
+        height = h;
+        depth = d;
+        weight = m;
+    }
+}
+
+class ColorBox extends HeavyBox {
+    int color;
+
+    ColorBox(int w, int h, int d, int m, int c) {
+        super(w,h,d,m); // передаем значения переменных в констуктор суперкласса HeavyBox
+        color = c;
+    }
+}
+
+// переопределение методов
+
+class Figure {
+    double dim1;
+    double dim2;
+    
+    Figure(double a, double b) {
+        dim1 = a;
+        dim2 = b;
+    }
+    
+    double area() {
+        System.out.printLn("Площадь фигуры");
+        return 0;
+    }
+}
+
+class Rectangle extends Figure {
+    Rectangle(double a, double b) {
+        super(a, b);
+    }
+    
+    // Переопределяем метод
+    double area() {
+        System.out.println("Площадь прямоугольника");
+        return dim1 * dim2;
+    }
+}
+
+class Triangle extends Figure {
+    Triangle(double a, double b) {
+        super(a, b);
+    }
+    
+    // переопределяем метод
+    double area() {
+        System.out.println("Площадь треугольника");
+        return dim1 * dim2 / 2;
+    }
+}
+
+// В главной активности
+Figure figure = new Figure(10, 10);
+Rectangle rectangle = new Rectangle(8, 5);
+Triangle triangle = new Triangle(10, 6);
+
+Figure fig;
+
+fig = figure;
+mInfoTextView.setText("Площадь равна " + fig.area);
+
+fig = rectangle;
+mInfoTextView.setText("Площадь равна " + fig.area);
+
+fig = triangle;
+mInfoTextView.setText("Площадь равна " + fig.area);
